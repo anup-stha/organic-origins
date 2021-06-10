@@ -1,0 +1,62 @@
+@import "../../styles/abstracts/mixins";
+@import "../../styles/abstracts/variables";
+
+@import "../../styles/layout/grid";
+@import "../../styles/base/animations";
+@import "../../styles/base/typography";
+@import "../../styles/base/utlities";
+@import "../ui/button.module.scss";
+
+.form {
+  &_group:not(:last-child) {
+    margin-bottom: 0.7rem;
+  }
+  &_input {
+    font-size: 1.5rem;
+    color: inherit;
+    font-family: inherit;
+    padding: 1.5rem 2rem;
+    border-radius: 2px;
+    background-color: rgba($color-white, 1);
+    border-bottom: 3px solid transparent;
+    width: 90%;
+    box-shadow: 0 1rem 4rem rgba($color-black, 0.1);
+    display: block;
+    border: none;
+
+    @include respond(phone) {
+      width: 100%;
+    }
+    &:focus {
+      outline: none;
+      box-shadow: 0 1rem 2rem rgba($color-black, 0.1);
+      border-bottom: 3px solid $color-primary;
+    }
+
+    &:focus:invalid {
+      border-bottom: 3px solid $color-secondary-dark;
+    }
+    &::-webkit-input-placeholder {
+      color: $color-grey-dark-2;
+    }
+  }
+
+  &_label {
+    font-size: 1.2rem;
+    font-weight: 700;
+    margin-left: 2rem;
+    margin-top: 0.7rem;
+    display: block;
+    transition: all 0.3s;
+  }
+
+  &_input:placeholder-shown + &_label {
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-4rem);
+  }
+
+  &_textarea {
+    height: 16rem;
+  }
+}

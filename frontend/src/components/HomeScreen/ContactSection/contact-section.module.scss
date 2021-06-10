@@ -1,0 +1,74 @@
+@import "../../../styles/abstracts/mixins";
+@import "../../../styles/abstracts/variables";
+
+@import "../../../styles/layout/grid";
+@import "../../../styles/base/animations";
+@import "../../../styles/base/typography";
+@import "../../../styles/base/utlities";
+
+.section_contact {
+  padding: 15rem 0;
+  background-image: linear-gradient(
+    to right bottom,
+    $color-primary-light,
+    $color-primary-dark
+  );
+  background-position: right;
+}
+
+.row {
+  padding: 0 0rem;
+  @include respond(tab-land) {
+    padding: 0rem 8rem;
+  }
+  @include respond(phone) {
+    padding: 0rem 3rem;
+  }
+}
+
+.contact {
+  background-image: linear-gradient(
+      105deg,
+      rgba($color-white, 0.9) 0%,
+      rgba($color-white, 0.9) 50%,
+      transparent 50%
+    ),
+    url(../../../assets/images/nat-10.jpg);
+  border-radius: 3px;
+  box-shadow: 0 1.5rem 4rem rgba($color-black, 0.15);
+  background-size: cover;
+  width: 100%;
+
+  @include respond(tab-land) {
+    background-image: linear-gradient(
+        105deg,
+        rgba($color-white, 0.9) 0%,
+        rgba($color-white, 0.9) 65%,
+        transparent 50%
+      ),
+      url(../../../assets/images/nat-10.jpg);
+  }
+
+  @include respond(tab-port) {
+    background-image: linear-gradient(
+        to right,
+        rgba($color-white, 0.9) 0%,
+        rgba($color-white, 0.9) 100%
+      ),
+      url(../../../assets/images/nat-10.jpg);
+  }
+  &_form {
+    width: 50%;
+    display: inline-flex;
+    flex-direction: column;
+    padding: 6rem;
+
+    @include respond(tab-land) {
+      width: 65%;
+    }
+    @include respond(tab-port) {
+      width: 100%;
+      padding: 2rem;
+    }
+  }
+}

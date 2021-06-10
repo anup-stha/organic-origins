@@ -1,0 +1,43 @@
+@import "../../../styles/abstracts/mixins";
+@import "../../../styles/abstracts/variables";
+
+@import "../../../styles/layout/grid";
+@import "../../../styles/base/animations";
+@import "../../../styles/base/typography";
+@import "../../../styles/base/utlities";
+.header {
+  height: 95vh;
+  background-image: linear-gradient(
+      to right bottom,
+      rgba($color-primary-light, 0.8),
+      rgba($color-primary-dark, 0.7)
+    ),
+    url(../../../assets/images/hero.jpg);
+  background-size: cover;
+  background-position: top;
+  position: relative;
+  clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%);
+
+  @include respond(phone) {
+    clip-path: polygon(0 0, 100% 0, 100% 85vh, 0 100%);
+  }
+
+  &_logoBox {
+    position: absolute;
+    top: 4rem;
+    left: 4rem;
+  }
+
+  &_logo {
+    height: 6.5rem;
+  }
+
+  &_textBox {
+    position: absolute;
+    top: 45%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    width: 100%;
+  }
+}

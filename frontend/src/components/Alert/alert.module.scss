@@ -1,0 +1,96 @@
+@import "styles/abstracts/variables";
+@import "styles/base/animations";
+@import "styles/base/typography";
+@import "styles/base/utlities";
+@import "styles/layout/grid";
+
+.alert_hide {
+  opacity: 0;
+
+  z-index: -1;
+  visibility: hidden;
+  animation: hide 0.2s ease-in-out;
+  display: flex;
+  margin: -5rem 0rem;
+  align-items: center;
+  padding: 1.2rem 1rem;
+  gap: 3rem;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  transition: all 0.2s ease;
+}
+
+.alert_container {
+  padding: 1.2rem 1rem;
+  background-color: $color-white;
+  margin-bottom: 2rem;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px,
+    rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
+  animation: slideDown 0.2s ease-in-out;
+  display: flex;
+  align-items: center;
+  gap: 3rem;
+  border-radius: 3px;
+
+  &_indicator {
+    background-color: $color-primary;
+    padding: 5rem 0.4rem;
+    margin: -1.4rem -1rem;
+    border-top-left-radius: 2px;
+    border-bottom-left-radius: 2px;
+  }
+  &_indicator_error {
+    background-color: $color-red;
+    padding: 5rem 0.4rem;
+    margin: -1.4rem -1rem;
+    border-top-left-radius: 2px;
+    border-bottom-left-radius: 2px;
+  }
+
+  &_icon {
+    color: $color-primary;
+
+    &_error {
+      color: $color-red;
+    }
+
+    &_remove {
+      flex: 1;
+      text-align: right;
+      margin-right: 2rem;
+      cursor: pointer;
+      &:hover {
+        color: $color-grey-dark-3;
+      }
+    }
+  }
+
+  &_text {
+    font-size: 1.8rem;
+    font-weight: 300;
+    color: $color-grey-dark-2;
+    line-height: 2.4rem;
+  }
+}
+
+@keyframes slideDown {
+  0% {
+    transform: translateY(-10rem);
+    opacity: 0;
+  }
+
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes hide {
+  from {
+    transform: translateY(0);
+    opacity: 1;
+  }
+  to {
+    transform: translateY(-10rem);
+    opacity: 0;
+  }
+}

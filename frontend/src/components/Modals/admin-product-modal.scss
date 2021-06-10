@@ -1,0 +1,141 @@
+@import "../../styles/abstracts/variables";
+@import "../../styles/base/animations";
+@import "../../styles/base/typography";
+@import "../../styles/base/utlities";
+
+.admin_modal_container {
+  height: 72rem;
+  width: 90vw;
+
+  border-radius: 1rem;
+  padding: 4rem;
+  display: flex;
+
+  @include respond(tab-land) {
+    height: 70rem;
+    width: 90vw;
+  }
+
+  @include respond(phone) {
+    height: 70vh;
+    width: 80vw;
+  }
+
+  flex-direction: column;
+}
+.admin_modal_container::-webkit-scrollbar {
+  display: none;
+}
+
+button {
+  margin-left: 1rem;
+}
+
+label {
+  margin-bottom: 2rem;
+}
+
+.file {
+  opacity: 0;
+  width: 0.1px;
+  height: 0.1px;
+  position: absolute;
+}
+
+.file-input label {
+  display: block;
+  position: relative;
+  width: 15rem;
+  height: 15rem;
+  background-image: url("data:image/svg+xml,%3csvg width='100%25' height='100%25' xmlns='http://www.w3.org/2000/svg'%3e%3crect width='100%25' height='100%25' fill='none' stroke='grey' stroke-width='4' stroke-dasharray='6%2c 14' stroke-dashoffset='3' stroke-linecap='square'/%3e%3c/svg%3e");
+  background-color: $color-grey-light-2;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  align-items: center;
+  justify-content: center;
+  &:hover {
+    background-image: url("data:image/svg+xml,%3csvg width='100%25' height='100%25' xmlns='http://www.w3.org/2000/svg'%3e%3crect width='100%25' height='100%25' fill='none' stroke='black' stroke-width='4' stroke-dasharray='6%2c 14' stroke-dashoffset='3' stroke-linecap='square'/%3e%3c/svg%3e");
+    background-color: darken($color-grey-light-2, 1);
+    color: #000;
+  }
+  cursor: pointer;
+  i {
+    font-size: 6rem;
+  }
+}
+
+.input-file {
+  width: 40%;
+  margin-left: 1rem;
+  @include respond(tab-port) {
+    width: 100%;
+    margin-left: 0;
+  }
+}
+
+.width-25 {
+  width: 25%;
+  @include respond(tab-port) {
+    width: 100%;
+  }
+}
+
+.width-50 {
+  width: 50%;
+  @include respond(tab-port) {
+    width: 100%;
+  }
+}
+
+.form {
+  &_input {
+    font-size: 1.5rem;
+    color: inherit;
+    font-family: inherit;
+    padding: 1.5rem 2rem;
+    border-radius: 2px;
+    background-color: rgba($color-white, 1);
+    border-bottom: 3px solid transparent;
+    width: 100%;
+    box-shadow: 0 1rem 4rem rgba($color-black, 0.1);
+    display: block;
+    border: none;
+    border-bottom: 1px solid $color-primary;
+
+    @include respond(phone) {
+      width: 100%;
+    }
+    &:focus {
+      outline: none;
+      box-shadow: 0 1rem 2rem rgba($color-black, 0.1);
+      border-bottom: 3px solid $color-primary;
+    }
+
+    &:focus:invalid {
+      border-bottom: 3px solid $color-secondary-dark;
+    }
+    &::-webkit-input-placeholder {
+      color: $color-grey-dark-2;
+    }
+  }
+
+  &_label {
+    font-size: 1.2rem;
+    font-weight: 700;
+    margin-left: 2rem;
+    margin-top: 0.7rem;
+    display: block;
+    transition: all 0.3s;
+  }
+
+  &_input:placeholder-shown + &_label {
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-4rem);
+  }
+
+  &_textarea {
+    height: 10rem;
+  }
+}

@@ -1,0 +1,170 @@
+@import "styles/abstracts/variables";
+@import "styles/base/animations";
+@import "styles/base/typography";
+@import "styles/base/utlities";
+@import "styles/layout/grid";
+
+table {
+  border-collapse: separate;
+  border-spacing: 0;
+  font-size: 1.4rem;
+  font-weight: 400;
+  background-color: $color-white;
+  box-shadow: 0 2rem 3rem rgba($color-black, 0.1);
+  text-align: left;
+  width: 100%;
+  margin-top: 2rem;
+}
+
+thead tr {
+  background-color: $color-blue-dark-2;
+  font-size: 1.6rem;
+  color: $color-white;
+  font-weight: 600;
+  text-transform: capitalize;
+  border-radius: 30px;
+  pointer-events: none;
+  td {
+    padding: 2rem 2rem;
+  }
+}
+
+td,
+th {
+  padding: 1rem 2rem;
+}
+
+tr {
+  vertical-align: center;
+}
+tr:hover {
+  background-color: #ddd;
+}
+
+.table_paid {
+  i {
+    color: #58cd36;
+    font-size: 3.5rem;
+    margin-top: 0.7rem;
+  }
+}
+.table_unpaid {
+  i {
+    color: $color-red;
+    font-size: 3.5rem;
+    margin-top: 0.7rem;
+  }
+}
+
+.details {
+  display: flex;
+  align-items: center;
+  i {
+    font-size: 1.2rem;
+    text-decoration: none;
+    opacity: 0;
+    transition: opacity 0.25s ease;
+  }
+  &:hover {
+    text-decoration: underline;
+    color: #58cd36;
+  }
+
+  &:hover i {
+    opacity: 1;
+  }
+}
+
+.edit {
+  padding: 1px;
+  height: 3.5rem;
+  width: 3.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 0.5rem 1rem rgba($color-black, 0.1);
+  font-size: 3rem;
+}
+
+.delete {
+  border: none;
+  color: $color-red;
+  padding: 1px;
+  height: 3.5rem;
+  width: 3.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 0.5rem 1rem rgba($color-black, 0.1);
+  font-size: 3rem;
+  cursor: pointer;
+  background-color: $color-white;
+}
+
+@include respond(tab-port) {
+  /* Force table to not be like tables anymore */
+  .user_table,
+  .user_thead,
+  .user_tbody,
+  .user_th,
+  .user_td,
+  .user_tr {
+    display: block;
+  }
+
+  /* Hide table headers (but not display: none;, for accessibility) */
+  .user_thead .user_tr {
+    position: absolute;
+    top: -9999px;
+    left: -9999px;
+  }
+
+  .user_tr {
+    border: 1px solid $color-blue-dark-2;
+  }
+
+  .user_td {
+    /* Behave  like a "row" */
+    border: none;
+    border-bottom: 1px solid #eee;
+    position: relative;
+    padding-left: 50%;
+    overflow-wrap: break-word;
+  }
+
+  .user_td:before {
+    /* Now like a table header */
+    position: absolute;
+    /* Top/left values mimic padding */
+    top: 6px;
+    left: 6px;
+    width: 45%;
+
+    padding-right: 10px;
+    white-space: nowrap;
+    font-weight: 600;
+    color: $color-blue-dark-2;
+    font-size: 1.5rem;
+    // color: $color-white;
+    // background-color: $color-blue-dark-2;
+  }
+
+  /*
+	Label the data
+	*/
+  .user_td:nth-of-type(1):before {
+    content: "Id";
+  }
+  .user_td:nth-of-type(2):before {
+    content: "User";
+  }
+  .user_td:nth-of-type(3):before {
+    content: "Email";
+  }
+  .user_td:nth-of-type(4):before {
+    content: "Admin";
+  }
+  .user_td:nth-of-type(5):before {
+    content: "";
+  }
+}

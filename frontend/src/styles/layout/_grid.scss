@@ -1,0 +1,129 @@
+.row {
+  display: flex;
+  max-width: $grid-width;
+  gap: 4rem;
+  margin: 0 auto;
+  @include respond(tab-port) {
+    flex-direction: column;
+    gap: 8rem;
+  }
+}
+
+.col_1_of_3 {
+  width: calc((100% - 2 * #{$gutter-horizontal}) / 3);
+  @include respond(tab-port) {
+    width: 100%;
+  }
+}
+.col_1_of_2 {
+  width: 50%;
+
+  @include respond(tab-port) {
+    width: 100% !important;
+  }
+}
+
+.col-1-of-4 {
+  width: calc((100% - 3 * #{$gutter-horizontal}) / 4);
+  @include respond(tab-port) {
+    width: 100%;
+  }
+}
+
+//FLEXBOX
+
+.grid_row {
+  display: flex;
+  width: 100%;
+}
+.grid_row_space_3 {
+  display: flex;
+  width: 100%;
+  gap: 3rem;
+}
+.grid_row_space_1 {
+  display: flex;
+  width: 100%;
+  gap: 1rem;
+}
+
+.grid_col_spaceBetween {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.grid_row_spaceBetween {
+  display: flex;
+  justify-content: space-between;
+}
+.grid_row_spaceBetween_alignCenter {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.grid_row_spaceBetween_flexEnd {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+}
+.grid_col_width_full {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.grid_col {
+  display: flex;
+  flex-direction: column;
+}
+.grid_col_space_1 {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+.grid_col_space_3 {
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+}
+.grid_col_space_half {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+.grid_row_baseline {
+  display: flex;
+  align-items: baseline;
+
+  gap: 0.4rem;
+}
+.grid_row_baseline_spaceBetween {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 0.4rem;
+}
+
+.grid_row_alignItems {
+  display: flex;
+  align-items: center;
+  gap: 5rem;
+}
+
+.grid_row_alignItems_1 {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  @include respond(tab-port) {
+    flex-direction: column;
+  }
+}
+// .container {
+//   min-height: 70vh;
+//   padding: 4rem 5rem 8rem 5rem;
+//   background-color: $color-grey-light-3;
+//   // display: flex;
+//   // align-items: center;
+//   // width: 100%;
+// }

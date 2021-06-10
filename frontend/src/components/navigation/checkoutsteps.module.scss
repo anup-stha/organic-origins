@@ -1,0 +1,97 @@
+@import "styles/abstracts/variables";
+@import "styles/base/animations";
+@import "styles/base/typography";
+@import "styles/base/utlities";
+
+.steps {
+  &_container {
+    display: flex;
+    justify-content: center;
+    font-size: 1.4rem;
+    font-weight: 300;
+    text-transform: capitalize;
+    height: 8rem;
+    margin-top: -2rem;
+    @include respond(phone) {
+      font-size: 1.2rem;
+      margin-right: -4rem;
+    }
+  }
+
+  &_list {
+    display: flex;
+    list-style: none;
+    gap: 4rem;
+    @include respond(phone) {
+      gap: 2rem;
+    }
+    &_item {
+      a {
+        color: $color-grey-dark-2;
+      }
+      &_completed {
+        a {
+          color: $color-primary;
+          font-weight: 500;
+        }
+
+        display: flex;
+        align-items: center;
+        gap: 0.4rem;
+
+        svg {
+          color: $color-primary;
+          @include respond(phone) {
+            width: 2.5rem;
+            height: 2.5rem;
+          }
+        }
+      }
+
+      &_active {
+        display: flex;
+        align-items: center;
+        gap: 0.4rem;
+
+        a {
+          color: $color-grey-dark-3;
+          font-weight: 600;
+        }
+        &_number {
+          border: 2px solid $color-grey-dark-3;
+          color: $color-grey-dark-3;
+          border-radius: 100%;
+          height: 3rem;
+          width: 3rem;
+          text-align: center;
+          font-weight: 600;
+          @include respond(phone) {
+            width: 2rem;
+            height: 2rem;
+            font-size: 0.8rem;
+          }
+        }
+      }
+      &_inactive {
+        display: flex;
+        align-items: center;
+        gap: 0.4rem;
+        &_number {
+          a {
+            color: $color-grey-dark-2;
+          }
+          border: 2px solid $color-grey-dark-2;
+          border-radius: 100%;
+          height: 3rem;
+          width: 3rem;
+          text-align: center;
+          @include respond(phone) {
+            width: 2rem;
+            height: 2rem;
+            font-size: 0.8rem;
+          }
+        }
+      }
+    }
+  }
+}

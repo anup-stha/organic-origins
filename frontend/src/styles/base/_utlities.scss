@@ -1,0 +1,58 @@
+.u_center_text {
+  text-align: center;
+}
+
+.u_margin_bottom_big {
+  margin-bottom: 8rem;
+  @include respond(tab-port) {
+    margin-bottom: 4rem;
+  }
+}
+.u_margin_bottom_medium {
+  margin-bottom: 4rem;
+  @include respond(tab-port) {
+    margin-bottom: 2rem;
+  }
+}
+.u_margin_bottom_small {
+  margin-bottom: 1.5rem;
+}
+
+.u_margin_top_big {
+  margin-top: 8rem;
+}
+
+.u_margin_top_small {
+  margin-top: 2rem;
+}
+.u_margin_top_medium {
+  margin-top: 5rem;
+}
+.u_margin_top_huge {
+  margin-top: 10rem;
+}
+
+.u_margin_left_small {
+  margin-left: 3rem;
+}
+
+.anchor {
+  display: block;
+  height: 50vh; /* 50% viewport height */
+  margin-top: -50vh;
+  visibility: hidden;
+}
+
+.margin_negative {
+  margin-top: -0.5rem;
+}
+
+.width_auto {
+  width: 30%;
+  @include respond(tab-port) {
+    width: 30%;
+  }
+  @include respond(phone) {
+    width: 100%;
+  }
+}

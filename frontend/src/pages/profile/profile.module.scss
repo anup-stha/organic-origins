@@ -1,0 +1,124 @@
+@import "styles/abstracts/variables";
+@import "styles/base/animations";
+@import "styles/base/typography";
+@import "styles/base/utlities";
+
+@keyframes slideLeft {
+  0% {
+    transform: translateX(-10rem);
+    opacity: 0;
+  }
+
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+.admin {
+  &_container {
+    min-height: 100vh;
+
+    background-color: $color-grey-light-2;
+  }
+
+  &_nav {
+    background-color: $color-blue-dark-2;
+    width: 60px;
+    height: 100%;
+    z-index: 1;
+    transition: all 0.4s ease;
+    position: fixed;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    ul {
+      font-size: 2.5rem;
+      font-weight: 300;
+      width: 100%;
+      color: rgba($color-white, 0.8);
+      list-style: none;
+      display: flex;
+      align-items: center;
+      flex-direction: column;
+      justify-content: column;
+      gap: 2rem;
+    }
+
+    li {
+      display: flex;
+      width: 100%;
+      align-items: center;
+      justify-content: center;
+      gap: 2rem;
+      cursor: pointer;
+      padding: 0.8rem;
+    }
+
+    p {
+      display: none;
+      transition: all 4s ease;
+
+      font-size: 1.6rem;
+    }
+
+    &:hover ul li p {
+      display: inline;
+    }
+
+    &_list_item_selected {
+      color: #08ae54;
+      border-left: 5px solid #08ae54;
+    }
+  }
+
+  &_content {
+    background-color: $color-grey-light-2;
+    width: calc(100% - 6rem);
+    margin-left: 6rem; /* Same as the width of the sidenav */
+    font-size: 28px; /* Increased text to enable scrolling */
+    display: inline-block;
+
+    &_container {
+      padding: 5rem;
+    }
+  }
+}
+
+.tooltip {
+  position: relative;
+  display: inline-block;
+}
+
+.tooltip .tooltiptext {
+  visibility: hidden;
+  opacity: 0;
+  width: 120px;
+  background-color: $color-blue-dark-2;
+  color: #fff;
+  text-align: center;
+  border-radius: 6px;
+  padding: 5px 0;
+  position: absolute;
+  z-index: 1;
+  top: -5px;
+  left: 110%;
+  margin: 1.2rem;
+  transition: all 1s ease;
+}
+
+.tooltip .tooltiptext::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  right: 100%;
+  margin-top: -5px;
+  border-width: 5px;
+  border-style: solid;
+  border-color: transparent $color-blue-dark-2 transparent transparent;
+}
+.tooltip:hover .tooltiptext {
+  visibility: visible;
+  opacity: 1;
+}

@@ -1,0 +1,56 @@
+@import "styles/abstracts/variables";
+@import "styles/base/animations";
+@import "styles/base/typography";
+@import "styles/base/utlities";
+
+.input {
+  &_container {
+    font-size: 1.5rem;
+    color: inherit;
+    font-family: inherit;
+    padding: 1.5rem 2rem;
+    border-radius: 2px;
+    background-color: rgba($color-white, 1);
+    border-bottom: 3px solid transparent;
+    width: 100%;
+    box-shadow: 0 1rem 4rem rgba($color-black, 0.2);
+    display: block;
+    border: none;
+    border-bottom: 1px solid $color-primary;
+
+    @include respond(phone) {
+      width: 100%;
+    }
+    &:focus {
+      outline: none;
+      box-shadow: 0 1rem 2rem rgba($color-black, 0.3);
+      border-bottom: 3px solid $color-primary;
+    }
+
+    &:focus:invalid {
+      border-bottom: 3px solid $color-secondary-dark;
+    }
+    &::-webkit-input-placeholder {
+      color: $color-grey-dark-2;
+    }
+  }
+
+  &_label {
+    font-size: 1.2rem;
+    font-weight: 700;
+    margin-left: 2rem;
+    margin-top: 0.7rem;
+    display: block;
+    transition: all 0.3s;
+  }
+
+  &_container:placeholder-shown + &_label {
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-4rem);
+  }
+
+  &_textarea {
+    height: 16rem;
+  }
+}

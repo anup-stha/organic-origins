@@ -1,0 +1,42 @@
+@import "../../../styles/abstracts/mixins";
+@import "../../../styles/abstracts/variables";
+
+@import "../../../styles/layout/grid";
+@import "../../../styles/base/animations";
+@import "../../../styles/base/typography";
+@import "../../../styles/base/utlities";
+
+.sectionProduct {
+  background-color: $color-grey-light-1;
+  padding: 25rem 1rem 15rem 1rem;
+  margin-top: -10rem;
+  @include respond(tab-port) {
+    padding: 20rem 18rem 15rem 18rem;
+  }
+  @include respond(phone) {
+    padding: 20rem 4rem 15rem 4rem;
+  }
+}
+
+.row {
+  display: flex;
+  max-width: $grid-width;
+  margin: 0 auto;
+  gap: 3.5rem;
+  justify-content: space-between;
+  @include respond(tab-land) {
+    gap: 2rem;
+  }
+  @include respond(tab-port) {
+    flex-direction: column;
+    gap: 8rem;
+  }
+}
+
+.col_1_of_3 {
+  width: calc((100% - 2 * #{$gutter-horizontal}) / 3);
+
+  @include respond(tab-port) {
+    width: 100%;
+  }
+}

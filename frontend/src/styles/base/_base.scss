@@ -1,0 +1,54 @@
+@font-face {
+  font-family: "Kiona Regular";
+  font-style: normal;
+  font-weight: normal;
+  src: local("Kiona"), url("../fonts/Kiona-Regular.woff") format("woff");
+}
+
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+  font-weight: 400;
+  /* font-size: 16px; */
+  line-height: 1.7;
+  color: #777;
+  // padding: 3rem;
+
+  @include respond(tab-port) {
+    padding: 0;
+  }
+  box-sizing: border-box;
+}
+
+a {
+  text-decoration: none;
+
+  color: inherit;
+}
+
+html {
+  font-size: 56.25%; // 1 rem=10px 10/16 = 62.5%
+  scroll-behavior: smooth;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+  @include respond(tab-land) {
+    font-size: 56.25%; // 1rem =9px 9/16 =56.25%
+  }
+
+  @include respond(tab-port) {
+    font-size: 50%; // 1rem = 8px 8/16 = 50%
+  }
+  // @include respond(phone) {
+  //   font-size: 40%;
+  // }
+  @include respond(big-desktop) {
+    font-size: 75%; // 1rem = 12px 12/16 = 75%
+  }
+}

@@ -1,0 +1,255 @@
+@import "styles/abstracts/mixins";
+
+.headingPrimary {
+  color: $color-white;
+  text-transform: uppercase;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  backface-visibility: hidden;
+  margin-bottom: 6rem;
+
+  &__main {
+    font-size: 6rem;
+    font-weight: 200;
+    letter-spacing: 1rem;
+
+    animation: moveInLeft ease-out 1s;
+    @include respond(phone) {
+      letter-spacing: 1rem;
+      font-size: 4rem;
+    }
+  }
+
+  &__sub {
+    font-size: 1.8rem;
+    font-weight: 300;
+    letter-spacing: 0.7rem;
+
+    animation: moveInRight ease-out 1s;
+
+    @include respond(phone) {
+      letter-spacing: 0.5rem;
+      font-size: 1rem;
+    }
+  }
+}
+
+.headingSecondary {
+  font-size: 3.5rem;
+  text-transform: uppercase;
+  font-weight: 500;
+  background-image: linear-gradient(
+    to right,
+    $color-primary-light,
+    $color-primary-dark
+  );
+  display: inline-block;
+  background-clip: text;
+  color: transparent;
+  letter-spacing: 2px;
+  transition: all 0.2s;
+  &_plain {
+    color: $color-primary-dark-2;
+    font-size: 3.5rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    transition: all 0.2s;
+    font-weight: 500;
+  }
+  @include respond(tab-port) {
+    font-size: 3rem;
+  }
+  @include respond(phone) {
+    font-size: 2.5rem;
+  }
+
+  &:hover {
+    transform: skewY(2deg) skewX(15deg) scale(1.1);
+    text-shadow: 0.5rem 1rem 2rem rgba($color-black, 0.2);
+  }
+}
+
+.headingTertiary {
+  font-size: 1.6rem;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.paragraph {
+  font-size: 1.6rem;
+  &:not(:last-child) {
+    margin-bottom: 3rem;
+  }
+}
+
+.headingOtherPrimary {
+  font-size: 3.4rem;
+  font-weight: 300;
+  color: $color-black;
+  @include respond(phone) {
+    font-size: 2.8rem;
+  }
+}
+
+.headingOtherSecondary {
+  font-size: 2.4rem;
+  font-weight: 400;
+  color: $color-grey-dark-3;
+  text-transform: capitalize;
+  &_2 {
+    color: $color-grey-dark-2;
+    font-size: 2.8rem;
+    font-weight: 400;
+  }
+  &_3 {
+    color: rgb(85, 85, 85);
+    font-size: 2.6rem;
+    font-weight: 400;
+  }
+  &_3_bold {
+    color: rgb(85, 85, 85);
+    font-size: 2.4rem;
+    font-weight: 500;
+  }
+  &_4 {
+    color: $color-grey-dark-3;
+    font-size: 2.2rem;
+    font-weight: 600;
+  }
+  cursor: pointer;
+  &:hover {
+    color: $color-grey-dark-3;
+  }
+}
+
+.paragraphOther {
+  font-size: 1.4rem;
+  font-weight: 300;
+  color: $color-grey-dark-2;
+  line-height: 2.4rem;
+  margin-left: 2px;
+  &_2 {
+    font-size: 2rem;
+    font-weight: 300;
+    color: $color-grey-dark;
+    &_span {
+      font-size: 1.3rem;
+      color: $color-secondary-dark;
+      cursor: pointer;
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+  }
+  &_3 {
+    font-size: 1.6rem;
+    font-weight: 500;
+    color: $color-grey-dark-3;
+  }
+
+  &_4 {
+    font-size: 1.6rem;
+    font-weight: 400;
+    color: $color-grey-dark-5;
+  }
+  &_5 {
+    font-size: 1.5rem;
+    font-weight: 300;
+    color: $color-grey-dark-2;
+  }
+  span {
+    color: $color-grey-dark-3;
+    font-weight: 400;
+  }
+
+  &_danger {
+    font-size: 1.3rem;
+    font-weight: 300;
+    color: $color-grey-dark-2;
+    &:hover {
+      color: $color-red;
+    }
+    display: flex;
+    align-items: center;
+    margin-right: 1rem;
+    cursor: pointer;
+  }
+}
+
+.paragraphTertiary {
+  font-size: 1.2rem;
+  font-weight: 200;
+  color: $color-grey-dark-2;
+  line-height: 2.4rem;
+  margin-left: 2px;
+}
+.price {
+  font-size: 4rem;
+  color: $color-primary-dark-2;
+  font-weight: 300;
+}
+
+.price_small {
+  font-size: 3rem;
+  color: $color-primary-dark-2;
+  font-weight: 300;
+}
+
+.price_tiny {
+  font-size: 2.2rem;
+  color: $color-primary-dark-2;
+  font-weight: 300;
+}
+
+.price_medium {
+  font-size: 3.5rem;
+  color: $color-primary-dark-2;
+  font-weight: 300;
+}
+
+//PARAGRAPH NEW
+
+.paragraph_bold {
+  font-size: 1.8rem;
+  font-weight: 600;
+  color: $color-grey-dark-3;
+}
+
+.heading_1 {
+  font-size: 3.8rem;
+  font-weight: 400;
+  color: $color-button;
+  text-transform: uppercase;
+  font-smooth: antialiased;
+  @include respond(phone) {
+    font-size: 2.8rem;
+  }
+}
+.heading_3 {
+  font-size: 2.8rem;
+  font-weight: 400;
+  color: $color-grey-dark-3;
+  text-transform: uppercase;
+  font-smooth: antialiased;
+  margin-bottom: 1rem;
+}
+
+.heading_2 {
+  font-size: 3.2rem;
+  font-weight: 500;
+  color: $color-grey-dark-3;
+  font-smooth: antialiased;
+  margin-bottom: 1rem;
+}
+
+.paragraph_1 {
+  font-size: 1.6rem;
+  font-weight: 300;
+  color: $color-grey-dark-2;
+}
+.paragraph_2 {
+  font-size: 1.4rem;
+  font-weight: 300;
+  color: $color-grey-dark-2;
+}

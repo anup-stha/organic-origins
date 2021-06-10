@@ -1,0 +1,165 @@
+@import "styles/abstracts/variables";
+@import "styles/base/animations";
+@import "styles/base/typography";
+@import "styles/base/utlities";
+
+.container {
+  min-height: 70vh;
+  padding: 6rem 5rem;
+  background-color: $color-grey-light-3;
+}
+
+.mainContent {
+  background-color: $color-white;
+  box-shadow: 0 1rem 4rem rgba($color-black, 0.1);
+  padding: 4rem;
+}
+
+.cart_container {
+  width: 65%;
+  @include respond(tab-land) {
+    width: 100%;
+  }
+}
+
+.cart_item_container {
+  padding: 2rem 2rem;
+  margin-top: 4rem;
+  background-color: $color-white;
+  animation: moveInLeft 1s ease;
+  width: 100%;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 10px 15px -3px,
+    rgba(0, 0, 0, 0.05) 0px 4px 6px -2px;
+  border-radius: 8px;
+  @include respond(phone) {
+    padding: 2rem;
+  }
+  &:not(:last-child) {
+    margin-bottom: 3rem;
+  }
+  &_image {
+    width: 24%;
+    border-radius: 3px;
+    object-fit: cover;
+    box-shadow: 0 1rem 2rem rgba($color-black, 0.2);
+    @include respond(phone) {
+      height: 40%;
+      width: 100%;
+      object-fit: contain;
+    }
+  }
+}
+.line {
+  width: 80%;
+  height: 0.4px;
+  background-color: $color-grey-light-2;
+  margin: 1rem 10%;
+}
+
+.total_container {
+  margin-top: 4rem;
+  margin-left: 3rem;
+  background-color: $color-white;
+  width: 30%;
+  box-shadow: rgba(0, 0, 0, 0.07) 0px 1px 2px, rgba(0, 0, 0, 0.07) 0px 2px 4px,
+    rgba(0, 0, 0, 0.07) 0px 4px 8px, rgba(0, 0, 0, 0.07) 0px 8px 16px,
+    rgba(0, 0, 0, 0.07) 0px 16px 32px, rgba(0, 0, 0, 0.07) 0px 32px 64px;
+  padding: 1rem 2rem;
+  height: 25rem;
+  border-radius: 8px;
+
+  @include respond(tab-land) {
+    width: 100%;
+    margin-top: 3rem;
+    margin-left: 0;
+  }
+}
+
+.cart_item_container_remove {
+  animation: moveInLeft 1s ease;
+  transition: all 1s ease-in;
+}
+
+.cart_row_container {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  @include respond(tab-land) {
+    flex-direction: column;
+  }
+}
+
+.grid_row {
+  display: flex;
+  width: 100%;
+}
+
+.grid_col_spaceBetween {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.grid_row_spaceBetween {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  @include respond(phone) {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
+.grid_row_spaceBetween_2 {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.grid_row_spaceBetween_flexEnd {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.grid_col_width_full {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.grid_col {
+  display: flex;
+  flex-direction: column;
+}
+
+.grid_row_baseline {
+  display: flex;
+  align-items: baseline;
+
+  gap: 0.4rem;
+}
+
+@keyframes moveInLeft {
+  0% {
+    opacity: 0;
+    transform: translateX(-10rem);
+  }
+
+  80% {
+    transform: translateX(1rem);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.grid_row_cart {
+  display: flex;
+  gap: 2rem;
+
+  @include respond(phone) {
+    flex-direction: column;
+    justify-content: center;
+    gap: 2rem;
+  }
+}

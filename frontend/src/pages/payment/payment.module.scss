@@ -1,0 +1,191 @@
+@import "styles/abstracts/variables";
+@import "styles/base/animations";
+@import "styles/base/typography";
+@import "styles/base/utlities";
+
+.container {
+  min-height: 70vh;
+  padding: 2rem 5rem 8rem 5rem;
+  background-color: $color-grey-light-3;
+}
+
+.payment_container {
+  padding: 4rem;
+  background-color: $color-white;
+  box-shadow: 0 1rem 4rem rgba($color-black, 0.1);
+}
+
+.button {
+  margin-top: 4rem;
+  @include respond(tab-port) {
+    width: 100%;
+  }
+}
+.option_group {
+  width: 90%;
+  max-width: 400px;
+  height: 150px;
+  position: relative;
+  overflow: hidden;
+  border-radius: 0.25em;
+  font-size: 4rem;
+  margin: 0.2em auto;
+  //  will-change: transform;
+  transform: translateZ(0);
+}
+
+.option_container {
+  display: flex;
+  justify-content: center;
+  align-items: stretch;
+  width: 120%;
+  height: 100%;
+  margin: 0 -10%;
+}
+
+.form {
+  display: flex;
+  font-size: 1.8rem;
+  flex-direction: column;
+  font-family: "Poppins";
+}
+
+.label {
+  display: flex;
+  cursor: pointer;
+  font-weight: 400;
+  position: relative;
+  overflow: hidden;
+  margin-bottom: 0.375em;
+  /* Accessible outline */
+  /* Remove comment to use */
+  /*
+		&:focus-within {
+				outline: .125em solid $color-primary;
+		}
+	*/
+  .input {
+    position: absolute;
+    left: -9999px;
+    &:checked + span {
+      background-color: mix(#fff, $color-primary, 84%);
+      &:before {
+        box-shadow: inset 0 0 0 0.4375em $color-primary;
+      }
+    }
+  }
+  .span {
+    display: flex;
+    align-items: center;
+    padding: 0.375em 0.75em 0.375em 0.375em;
+    border-radius: 99em; // or something higher...
+    transition: 0.25s ease;
+    &:hover {
+      background-color: mix(#fff, $color-primary, 84%);
+    }
+    &:before {
+      display: flex;
+      flex-shrink: 0;
+      content: "";
+      background-color: #fff;
+      width: 1.5em;
+      height: 1.5em;
+      border-radius: 50%;
+      margin-right: 0.375em;
+      transition: 0.25s ease;
+      box-shadow: inset 0 0 0 0.125em $color-primary;
+    }
+  }
+}
+
+.paymentOption {
+  width: 25%;
+  height: 20rem;
+  @include respond(tab-port) {
+    width: 55vw;
+    height: 25rem;
+  }
+  @include respond(phone) {
+    width: 100%;
+    height: 25rem;
+  }
+
+  border-radius: 1rem;
+  margin-right: 3rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 2rem;
+  position: relative;
+
+  &_selected {
+    color: $color-primary;
+    border: 2px solid $color-primary-dark;
+    background-color: $color-primary-light-2;
+    box-shadow: 0 1rem 2rem rgba($color-black, 0.1);
+    p {
+      font-family: "Poppins";
+      font-size: 1.8rem;
+      color: $color-grey-dark-3;
+      text-transform: uppercase;
+    }
+    .main_icon {
+      fill: lighten($color: $color-primary-dark, $amount: 2);
+      width: 30%;
+      height: 30%;
+    }
+  }
+  &_notselected {
+    color: $color-grey-dark-2;
+    border: 2px solid $color-grey-dark-2;
+    background-color: $color-grey-light-2;
+    p {
+      font-family: "Poppins";
+      font-size: 1.8rem;
+      color: $color-grey-dark-2;
+      text-transform: uppercase;
+    }
+    .main_icon {
+      fill: $color-grey-dark-2;
+      width: 30%;
+      height: 30%;
+    }
+  }
+
+  &_container {
+    display: flex;
+    @include respond(tab-port) {
+      flex-direction: column;
+      gap: 4rem;
+    }
+  }
+
+  &_selected_icon {
+    position: absolute;
+    width: 5rem;
+    height: 5rem;
+    right: 0;
+    top: 0;
+    border-radius: 100%;
+    background-color: $color-white;
+    transform: translate(45%, -45%);
+    transform-origin: center center;
+    border: 2px solid $color-primary-dark;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0rem 0.5rem 1rem rgba($color-black, 0.1);
+
+    .tick {
+      width: 2rem;
+      height: 2rem;
+      margin-top: -0.2rem;
+      fill: $color-primary-dark;
+    }
+  }
+  &_notselected_icon {
+    display: none;
+  }
+}

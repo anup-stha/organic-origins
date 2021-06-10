@@ -1,0 +1,43 @@
+@import "styles/abstracts/variables";
+@import "styles/base/animations";
+@import "styles/base/typography";
+@import "styles/base/utlities";
+@import "styles/layout/grid";
+
+.message_container {
+  width: 100%;
+  padding: 1.5rem 1rem;
+  font-size: 1.6rem;
+  max-width: 60rem;
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin: 3rem 0;
+  &_error {
+    background-color: rgba($color-red, 0.2);
+    color: rgb(51, 0, 0);
+    i {
+      font-size: 4rem;
+      color: rgb(151, 0, 0);
+    }
+  }
+
+  &_success {
+    background-color: rgba($color-primary, 0.4);
+    color: rgb(0, 102, 0);
+    i {
+      font-size: 4rem;
+      color: rgb(0, 102, 0);
+    }
+  }
+
+  &_warning {
+    background-color: rgba($color-secondary-light, 0.4);
+    color: rgb(89, 58, 0);
+    i {
+      font-size: 4rem;
+      color: rgb(89, 58, 0);
+    }
+  }
+}

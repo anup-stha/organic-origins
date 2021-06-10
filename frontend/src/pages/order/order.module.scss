@@ -1,0 +1,190 @@
+@import "styles/abstracts/variables";
+@import "styles/base/animations";
+@import "styles/base/typography";
+@import "styles/base/utlities";
+@import "styles/layout/grid";
+
+.container {
+  min-height: 70vh;
+  padding: 2rem 5rem 8rem 5rem;
+  background-color: $color-grey-light-3;
+}
+
+.payment_container {
+  padding: 4rem;
+  background-color: $color-white;
+  box-shadow: 0 1rem 4rem rgba($color-black, 0.1);
+  display: flex;
+  justify-content: space-between;
+  @include respond(tab-port) {
+    flex-direction: column;
+  }
+}
+
+.delivery_box {
+  width: 80%;
+  background-color: $color-white;
+  border: 2px solid $color-primary-dark;
+  box-shadow: 0 1rem 2rem rgba($color-black, 0.1);
+  border-radius: 1rem;
+
+  cursor: pointer;
+  margin: 2rem;
+  padding: 2.5rem;
+  transition: all 0.2s ease;
+  &:hover {
+    transform: translateY(-0.4rem);
+    box-shadow: 0 1rem 2rem rgba($color-black, 0.2);
+  }
+  @include respond(tab-port) {
+    width: 40%;
+  }
+  @include respond(tab-port) {
+    width: 100%;
+    margin: 1rem 0;
+  }
+
+  &_name {
+    font-size: 2rem;
+    font-weight: 600;
+    color: $color-grey-dark-3;
+  }
+}
+
+.payment_box {
+  margin: 2rem 2rem;
+  @include respond(phone) {
+    margin: 2rem 0;
+  }
+}
+
+.cart_div {
+  display: flex;
+  gap: 2rem;
+  margin: 2rem;
+  padding: 1rem;
+  border-radius: 1rem;
+  cursor: pointer;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px,
+    rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+  justify-content: space-between;
+  align-items: center;
+  img {
+    width: 4rem;
+    object-fit: contain;
+    @include respond(phone) {
+      height: 10rem;
+      width: 10rem;
+      object-fit: contain;
+    }
+  }
+  h1 {
+    flex: 1;
+  }
+  @include respond(phone) {
+    flex-direction: column;
+  }
+}
+
+.payment_summary {
+  width: 35%;
+  height: 47rem;
+  box-shadow: rgba(0, 0, 0, 0.07) 0px 1px 2px, rgba(0, 0, 0, 0.07) 0px 2px 4px,
+    rgba(0, 0, 0, 0.07) 0px 4px 8px, rgba(0, 0, 0, 0.07) 0px 8px 16px,
+    rgba(0, 0, 0, 0.07) 0px 16px 32px, rgba(0, 0, 0, 0.07) 0px 32px 64px;
+  margin: 4rem 0rem 5rem 5rem;
+  padding: 2rem;
+  border-radius: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  @include respond(tab-land) {
+    width: 45%;
+    margin: 0;
+    margin-top: 2rem;
+  }
+  @include respond(tab-port) {
+    width: 100%;
+    margin: 0;
+    margin-top: 2rem;
+  }
+}
+
+.line {
+  width: 100%;
+  height: 1px;
+  background-color: $color-grey-light-2;
+  margin: 1rem 0;
+}
+
+.paymentOption {
+  width: 35rem;
+  height: 20rem;
+
+  border-radius: 1rem;
+  margin-right: 3rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 2rem;
+  position: relative;
+  @include respond(phone) {
+    width: 100%;
+    margin: 0;
+  }
+
+  &_selected {
+    color: $color-primary;
+    border: 2px solid $color-primary-dark;
+    background-color: $color-primary-light-2;
+    box-shadow: 0 1rem 2rem rgba($color-black, 0.1);
+    p {
+      font-family: "Poppins";
+      font-size: 1.8rem;
+      color: $color-grey-dark-3;
+      text-transform: uppercase;
+    }
+    .main_icon {
+      fill: lighten($color: $color-primary-dark, $amount: 2);
+      width: 30%;
+      height: 30%;
+    }
+  }
+  &_container {
+    display: flex;
+  }
+
+  &_selected_icon {
+    position: absolute;
+    width: 5rem;
+    height: 5rem;
+    right: 0;
+    top: 0;
+    border-radius: 100%;
+    background-color: $color-white;
+    transform: translate(45%, -45%);
+    transform-origin: center center;
+    border: 2px solid $color-primary-dark;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0rem 0.5rem 1rem rgba($color-black, 0.1);
+
+    .tick {
+      width: 2rem;
+      height: 2rem;
+      margin-top: -0.2rem;
+      fill: $color-primary-dark;
+    }
+  }
+}
+.paymentButton {
+  margin-top: 5rem;
+  box-shadow: rgba(0, 0, 0, 0.07) 0px 1px 2px, rgba(0, 0, 0, 0.07) 0px 2px 4px,
+    rgba(0, 0, 0, 0.07) 0px 4px 8px, rgba(0, 0, 0, 0.07) 0px 8px 16px,
+    rgba(0, 0, 0, 0.07) 0px 16px 32px, rgba(0, 0, 0, 0.07) 0px 32px 64px;
+  width: 100%;
+  padding: 2rem;
+}

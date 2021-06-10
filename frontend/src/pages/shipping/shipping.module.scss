@@ -1,0 +1,75 @@
+@import "styles/abstracts/variables";
+@import "styles/base/animations";
+@import "styles/base/typography";
+@import "styles/base/utlities";
+
+.container {
+  min-height: 70vh;
+  padding: 2rem 5rem 8rem 5rem;
+  background-color: $color-grey-light-3;
+}
+
+.shipping_container {
+  padding: 8rem 4rem;
+  background-color: $color-white;
+  @include respond(phone) {
+    padding: 6rem 1rem;
+  }
+}
+
+.form_group {
+  width: 70%;
+  margin: 0 15%;
+
+  @include respond(mobile) {
+    width: 100%;
+  }
+  @include respond(tab-port) {
+    width: 90%;
+    margin: 0 5%;
+  }
+  @include respond(tab-land) {
+    width: 80%;
+    margin: 0 10%;
+  }
+}
+
+.grid_container {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr 1fr;
+  gap: 2rem 2rem;
+  grid-template-areas:
+    "Address Address Address"
+    "city zone province"
+    "Phone Phone postal"
+    "Country Country Country";
+  margin-bottom: 4rem;
+  @include respond(tab-port) {
+    display: flex;
+    flex-direction: column;
+
+    justify-content: center;
+  }
+}
+.Address {
+  grid-area: Address;
+}
+.city {
+  grid-area: city;
+}
+.zone {
+  grid-area: zone;
+}
+.province {
+  grid-area: province;
+}
+.Phone {
+  grid-area: Phone;
+}
+.postal {
+  grid-area: postal;
+}
+.Country {
+  grid-area: Country;
+}
