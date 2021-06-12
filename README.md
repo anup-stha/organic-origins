@@ -2,7 +2,7 @@
 
 > E-Commerce Website built using MERN Stack
 
-![Screenshot 2021-06-11 at 14-20-08 Organic Origins](https://user-images.githubusercontent.com/74340974/121658345-f2256280-cac0-11eb-8e59-1013a104b179.png)
+> You can check out website at <a href="https://organic-origins-v1.herokuapp.com">https://organic-origins-v1.herokuapp.com</a>
 
 > This project will be updated frequently to add new features
 
